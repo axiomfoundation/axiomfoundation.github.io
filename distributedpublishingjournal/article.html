@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Submit/Publish an Article</title>
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="topnav">
+            <a href="./">Home</a>
+            <a href="./newarticle.html">Upload article</a>
+            <a class="active" id = "publishArticleNav" href="./article.html">Publish</a>    </div>
+    <h1>Submit or Publish an Article</h1>
+    <a id="meta-mask-required"></a>    
+    <p id = "coinbaseAddress"></p>
+    <div hidden id="webpage"> 
+        <h2 id="journalTitle"></h2>
+        <p><a id="publicationCost"></a></p>
+        <p>&#8681;</p>
+
+        <h3>1. Article Details:</h3>
+        <p id="articleInput">Enter Article address (with 0x): 
+            <input size ="43" id ="articleAddress">
+            <button type="button" onclick="setArticleAdrress()">Confirm</button>             
+        </p>
+        <a id="articleLink" target="_blank"></a>
+        <p id="isAuthor"></p>
+        <p><a id="approvedArticle"></a> <a id="publicationCost"></a></p>
+
+            <div hidden id="publishField">
+                <p>&#8681;</p>
+                <h3>2. Publish the article:</h3>
+                <p><a id="myFunds"></a></p>
+                <p><a id="allowedFunds"></a></p>
+                <p id="publishArticle"><button type="button" id="publishButton" onclick="publish()">Publish</button></p>
+                </div>    
+            </div> 
+            <p id = "transactionInfo" hidden>Follow the transaction on etherscan or your web3 instance (metamask) to get the contract address. This may take some time!</p>
+            <p id = "transactionHash"></p>
+            <p id = "loadingThing" hidden>Wating for the contract...</p>
+
+            <div id="spinner-wrapper" hidden>
+                <p id="spinner-header">Working...</p>
+                <div id="spinner"></div>    
+            </div>    
+        </div>  
+        <div hidden id="approveField">
+            <h3>(Owner Access) Approve/Dissaprove the article:</h3>
+            <p id="approveArticle"></p><button type="button" id="approveButton"></button></p>
+            </div>    
+        </div>  
+        <div hidden id="deleteField">
+            <h3>(Owner Access) Delete the article:</h3>
+            <p id="deleteArticle"></p><button type="button" id="deleteButton" onclick="deleteArticle()">Delete</button></p>
+            </div>    
+        </div>  
+
+    <script type="text/javascript" src="/scripts/constants.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/article.js"></script>
+    <script type="text/javascript" src="/scripts/web3.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+</body>
+</html>

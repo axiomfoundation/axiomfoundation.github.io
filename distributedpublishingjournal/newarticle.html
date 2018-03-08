@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Article</title>
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="topnav">
+            <a href="./">Home</a>
+            <a class="active" href="./newarticle.html">Upload article</a>
+            <a id = "publishArticle" href="./article.html">Publish</a>
+    </div>
+
+    <h1>Article upload form </h1>
+
+    <a id="meta-mask-required"></a>
+    <div hidden id=webpage>    
+        <p>&#8681;</p>
+        <p>1. Upload and share the article pdf on the ipfs <b>(IMPORTANT - once uploaded, it cannot be deleted, it becomes somewhat public)</b>:</p>
+        <form id = "uploadButtons">
+            <input type='file' onchange='openFile(event)'><br>
+            <br>
+            <button type="button" class= 'btn' onclick="submitArticle()">Upload</button>
+            <p id ="uploadedPerc"></p>
+        </form>
+        <a id="pdfLink" target="_blank"></a>
+
+        <div hidden id = "metadataForm">
+            <p>&#8681;</p>
+            <p>2. Create meta-data for the article, and share it on the ipfs <b>(IMPORTANT - once shared, it cannot be deleted, it becomes somewhat public)</b>:</p>
+            <form id = "metadataButtons">
+                <div>
+                    Title: <br> <textarea rows="2" cols="50" id="metaTitle"></textarea>
+                </div>
+                <div>
+                    Authors: <br> <textarea rows="2" cols="50" id="metaAuthors"></textarea>
+                </div>
+                <div>
+                    Affiliations <br> <textarea rows="2" cols="50" id="metaAffiliations"></textarea>
+                </div>
+                <div>
+                    Abstract: <br> <textarea rows="10" cols="50" id="metaAbstract"></textarea>
+                </div>
+                <div>
+                    Tags (separate with comma): <br> <textarea rows="2" cols="50" id="metaTags"></textarea>
+                </div>
+                <button type="button" onclick="previewMeta()">Preview Article</button>
+                <button type="button" onclick="submitMeta()">Submit</button>
+            </form>
+        </div>
+        <a id="articleLink" target="_blank"></a>
+        <div hidden id = "submitArticleForm">
+            <p>&#8681;</p>
+            <p>3. Register article on blockchain <b>(IMPORTANT - once submitted, the article page and pdf will be registered with your address and will be easily accessible to EVERYBODY FOREVER)</b>:</p>
+            <p id = "coinbaseAddress"></p>
+            <div id = "registerButton">
+                <button type="button" onclick="registerArticle()">Submit</button>
+            </div>
+        </div>
+        <p id = "transactionInfo" hidden>Follow the transaction on etherscan or your web3 instance (metamask) to get the contract address. This may take some time!</p>
+        <p id = "transactionHash"></p>
+        <p id = "loadingThing" hidden>Wating for the contract...</p>
+
+        <div id="spinner-wrapper" hidden>
+                <p id="spinner-header">Registering article...</p>
+                <div id="spinner"></div>
+        </div>    
+
+    </div>   
+    <script type="text/javascript" src="/scripts/constants.js"></script>
+    <script type="text/javascript" src="/scripts/utilities.js"></script>
+    <script type="text/javascript" src="/scripts/newarticle.js"></script>
+    <script type="text/javascript" src="/scripts/web3.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/ipfs-api_18.1.1.js"></script>
+</body>
+</html>

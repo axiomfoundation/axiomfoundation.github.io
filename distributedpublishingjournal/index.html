@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Journal of distributed publishing</title>
+    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <p id="IEmessage" hidden>Internet Explorer is an outdated browser with little or no support for any new web technology. Please consider switching to something else, to help the programming community.<br>This website will likely not work with any version of IE</p>
+
+    <div class="topnav">
+         <a class="active" href="./">Home</a>
+        <a href="./newarticle.html">Upload article</a>
+        <a id = "publishArticle" href="./article.html">Publish</a>
+        <a hidden id = "ownerAccess" href="./editjournal.html">Edit Journal (owner access)</a>
+    </div>
+
+    <p id="meta-mask-required"></p> 
+    <h1>Journal of Distrubuted Publishing</h1>
+    <p><a id="journalAddress"></a></p>
+    <p>Editor in Chief: <b>Nikola Tesla</b> (teslan@westinghouse.com) <a target="_blank" href="https://ropsten.etherscan.io/address/0x02e7d46d7cc791823e10d5b0f67636595a464256">(eth)</a></p>
+    <p>Chief's deputy: <b>Albert Einstein</b> (albert@princeton.edu) <a target="_blank" href="https://ropsten.etherscan.io/address/0x02e7d46d7cc791823e10d5b0f67636595a464256">(eth)</a></p>
+    <p>Editors:</p>
+    <ul>
+        <li>Werner Heisenberg (dedcat@uni-muenchen.de) <a target="_blank" href="https://ropsten.etherscan.io/address/0x02e7d46d7cc791823e10d5b0f67636595a464256">(eth)</a></li>
+        <li>Marie Curie (marie@espci.fr) <a target="_blank" href="https://ropsten.etherscan.io/address/0x02e7d46d7cc791823e10d5b0f67636595a464256">(eth)</a></li>
+        <li>Isaac Newton (theforce@cam.ac.uk) <a target="_blank" href="https://ropsten.etherscan.io/address/0x02e7d46d7cc791823e10d5b0f67636595a464256">(eth)</a></li>
+    </ul>
+    <p>This journal publishes nothing, it's an example. The list of editors is fictional.</p>
+
+    <p><a id="publicationCost"></a></p>
+    <h3>Publication list:</h3>
+    <p id="noPublicationInfo">Your browser might not be able to browse the blockchain. Try Chrome or Firefox</p>
+    <table id="publicationList">   
+    </table>
+    <button id="loadMore" hidden>Load more</button>
+    <div id="spinner" hidden></div>
+
+<!--  <iframe height="800" width="100%" src="/sampleDescription.html"></iframe> -->
+
+    <script type="text/javascript" src="/scripts/constants.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/scripts/index.js"></script>
+    <script type="text/javascript" src="/scripts/web3.min.js"></script>
+</body>
+</html>
