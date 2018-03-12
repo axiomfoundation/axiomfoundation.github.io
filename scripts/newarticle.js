@@ -129,30 +129,21 @@ function registerArticle() {
     var meta = ipfsIdMeta;
     var pdf = ipfsIdPdf;
     var ArticleContract = web3.eth.contract(articleAbi);
-    var article = ArticleContract.new(
-        meta,
-        pdf,
-        articleTitle,
-        articleAuthors,
-        {
-            gas: '1000000',
-            from: web3.eth.accounts[0],
-            data: articleBytecode,
-        }, function (error, contract) {
-            if (error)
-                throw new Error('Failed registering article.');
 
-            disableFields(contract.transactionHash);
+    articleAPI.deployArticle(articleTitle, articleAuthors, meta, pdf).then(contract => {
+        disableFields(contract.transactionHash);
 
-            web3.eth.getTransactionReceiptMined(contract.transactionHash).then(function (receipt) {
-                enableFields(receipt.contractAddress);
+        web3.eth.getTransactionReceiptMined(contract.transactionHash).then(function (receipt) {
+            enableFields(receipt.contractAddress);
 
-                if (receipt.status == 1)
-                    console.log('Transaction mined successfully.')
-                else
-                    console.log('Transaction mined, but failed.')
-            });
-        })
+            if (receipt.status == 1)
+                console.log('Transaction mined successfully.')
+            else
+                console.log('Transaction mined, but failed.')
+        });
+    }).catch(error => {
+        throw new Error('Error registering article: ' + error);
+    })
 }
 
 function disableFields(_transactionHash) {

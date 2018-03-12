@@ -3,7 +3,6 @@ var articleAddress;
 var journalAddress; 
 var publicationCost;
 
-//ubaci globalnu journalInstance promenljivu da ne bi instancirao journalContract pri svakom pozivu neke metode
 window.onload = function () {
     setHeaderLinks();
     if (typeof web3 === 'undefined') {
@@ -65,20 +64,6 @@ function initToken() {
     });
 }
 
-function initArticle(articleAddress) {
-    return new Promise((resolve, reject) => {
-        const ArticleContract = web3.eth.contract(articleAbi);
-        ArticleContract.at(articleAddress, (error, article) => {
-            if (error) {
-                reject(new Error('Error initializing Article Contract: ' + error))
-                return;
-            }         
-            
-            resolve(article);
-        });
-    });
-}
-
 function setArticleAdrress() {
     if (!articleAddress) {
         articleAddress = $('#articleAddress').val();
@@ -133,7 +118,7 @@ function setArticleAdrress() {
         window.alert(error);
     })
 
-    initArticle(articleAddress).then(result => {
+    articleAPI.articleAt(articleAddress).then(result => {
         const article = result;
 
         article.author(function(error, author){

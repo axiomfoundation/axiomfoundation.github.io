@@ -1,7 +1,6 @@
 var web3;
 var journalInstance;
 var JournalContract;
-var ArticleContract;
 var publicationArray = [];
 var loggedUser;
 var userIsOwner = false;
@@ -23,9 +22,7 @@ window.onload = function () {
     catch(error){} //don't care
     //use infura for the rest (for users without metamask)
     web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io"));
-    console.log(web3.eth.blockNumber)
     JournalContract = web3.eth.contract(journalAbi)
-    ArticleContract = web3.eth.contract(articleAbi)
     $("#journalAddress").html("Journal Address: " + JOURNAL_ADDRESS);
     JournalContract.at(JOURNAL_ADDRESS, function(error, result){
         journalInstance = result;
@@ -41,7 +38,7 @@ window.onload = function () {
                 $("#noPublicationInfo").show();
                 $("#noPublicationInfo").html("No publications :(");
             }
-            else{
+            else {
                 currentLocation = loadArticleChunk(articlecount-1, 20);
             }
         });
@@ -56,7 +53,9 @@ window.onload = function () {
 
 var currentLocation;
 var finish; 
-function loadArticleChunk(from, length){
+var thereSmore;
+
+function loadArticleChunk(from, length) {
     $("#spinner").show();
     finish = from - length + 1;
     if (finish < 0) {
@@ -66,42 +65,32 @@ function loadArticleChunk(from, length){
     var processed = 0;
     publicationArray = [];
     for(i = from; i >= finish; i--){
-        journalInstance.articles(i, function(error, articleAddress){
+        journalInstance.articles(i, function(error, articleAddress) {
             if (articleAddress === "0x0000000000000000000000000000000000000000")
             {
-                processed++;
+                processed++;      
+            } else {
+                articleAPI.createObjectFromArticleAt(articleAddress).then(article => {
+                    publicationArray.push(article);
+                }).catch(error => {
+                    console.error('Error retrieving article at address: ' + articleAddress + ' :' + error);
+                }).then(results => {
+                    if (++processed == length){
+                        createTable();
+                    };
+                });
             }
-            else ArticleContract.at(articleAddress, function (error, article){
-                article.meta(function(error, ipfsLink){
-                    article.title(function(error, title){
-                        article.authors(function(error, authors){
-                            article.pdf(function(error, pdf){
-                                article.timestamp(function(error, timestamp){
-                                    publicationArray.push([timestamp, ipfsLink, title, authors, pdf, articleAddress]);
-                                    if (++processed == length){
-                                        createTable();
-                                    };
-                                })
-                            })
-                        })
-                    })
-                })
-            })
         })
     }
     //return finish-1;
     if (finish > 0){
         thereSmore = true;
         $("#loadMore").hide();
-    }
-    else
-    {
+    } else {
         thereSmore = false;
         $("#loadMore").hide();
     }
 }
-
-var thereSmore;
 
 function createTable() {
     publicationArray.sort(function(x, y){
@@ -109,14 +98,14 @@ function createTable() {
     })
     var options = { year: 'numeric', month: 'long', day: 'numeric' };
     
-    publicationArray.forEach(function (element){
-        var timestamp = element[0];
-        var ipfsLink = element[1];
-        var title = element[2];
-        var authors = element[3];
-        var pdf = element[4];
+    publicationArray.forEach(function (article) {
+        var timestamp = article.timestamp;
+        var ipfsLink = article.meta;
+        var title = article.title;
+        var authors = article.authors;
+        var pdf = article.pdf;
         var date = new Date(timestamp * 1000);
-        var articleAddress = element[5];
+        var articleAddress = article.articleAddress;
         var row = ''
         row += '<tr>'
         row += '<td id="journalTitle">&#8226</td>' 
