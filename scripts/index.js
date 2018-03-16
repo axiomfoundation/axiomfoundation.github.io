@@ -70,7 +70,7 @@ function loadArticleChunk(from, length) {
             {
                 processed++;      
             } else {
-                articleAPI.createObjectFromContractAt(articleAddress).then(article => {
+                articleAPI.getPrimitiveFields(articleAddress).then(article => {
                     publicationArray.push(article);
                 }).catch(error => {
                     console.error('Error retrieving article at address: ' + articleAddress + ' :' + error);

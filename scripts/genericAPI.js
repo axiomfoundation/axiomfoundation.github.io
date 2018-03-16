@@ -79,15 +79,16 @@ genericAPI.at = function (contractAddress) {
 
 /*
 Promise: Takes contract address and contract field names as input and builds an
-object containing speficied fields. If no fields are specified as the
-second parameter, returns all contract fields.
+object containing speficied *primitive-non array* fields. If no fields are specified as the
+second parameter, returns all primitive contract fields.
 */
-genericAPI.createObjectFromContractAt = function(contractAddress, ...fieldsToRetrieve) {
+genericAPI.getPrimitiveFields = function(contractAddress, ...fieldsToRetrieve) {
+    let self = this;
     let contractObject = {};
     let fields = fieldsToRetrieve.length == 0 ? this.contractFields : fieldsToRetrieve;
     
     return new Promise((resolve, reject) => {
-        articleAPI.Contract.at(contractAddress, function (error, contractInstance) {
+        self.Contract.at(contractAddress, function (error, contractInstance) {
             if (error) {
                 reject(new Error('Error at retrieving article at address ' + error));
                 return;
