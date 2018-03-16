@@ -130,7 +130,7 @@ function registerArticle() {
     var pdf = ipfsIdPdf;
     var ArticleContract = web3.eth.contract(articleAbi);
 
-    articleAPI.deployArticle(articleTitle, articleAuthors, meta, pdf).then(contract => {
+    articleAPI.deploy(articleTitle, articleAuthors, meta, pdf).then(contract => {
         disableFields(contract.transactionHash);
 
         web3.eth.getTransactionReceiptMined(contract.transactionHash).then(function (receipt) {

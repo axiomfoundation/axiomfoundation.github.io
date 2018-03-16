@@ -118,7 +118,7 @@ function setArticleAdrress() {
         window.alert(error);
     })
 
-    articleAPI.articleAt(articleAddress).then(result => {
+    articleAPI.at(articleAddress).then(result => {
         const article = result;
 
         article.author(function(error, author){
