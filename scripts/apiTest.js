@@ -6,6 +6,6 @@ articleAPI.getPrimitiveFields('0xc0f0f7b06cd27c203df04c5b4694a2d7400415b0', 'tit
     console.log(result);
 })
 
-genericAPI.getPrimitiveFields('0xb25832c5a39933eced914f188e69681ee9590cb4', 'versions', 'authors').then(result => {
+openArticleAPI.getPrimitiveFields('0xb25832c5a39933eced914f188e69681ee9590cb4', 'getVersions', 'getAuthors').then(result => {
     console.log(result);
 })
