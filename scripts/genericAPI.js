@@ -51,8 +51,6 @@ genericAPI.invokeMethod = function(methodName, ...args) {
 }
 
 genericAPI.deploy = function(...args) {
-    console.log('evo ga u deploy: ' + this.deploymentGas)
-
     let deploymentOptions = {
         from: web3.eth.coinbase,
         gas: this.deploymentGas   
