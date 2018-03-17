@@ -6,7 +6,7 @@ const genericAPI = {
     deploymentGas: undefined
 }
 
-genericAPI.setContract = function(_contractABI, _contractByteCode, _contractFields, _deploymentGasCost) {
+genericAPI.setContract = function(_contractABI, _contractByteCode) {
     this.contractABI = _contractABI;
     this.Contract = web3.eth.contract(_contractABI);
     this.contractBytecode = _contractByteCode;
