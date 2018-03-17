@@ -63,6 +63,7 @@ genericAPI.deploy = function(...args) {
 
 /*
 Promise: Takes contract address as input and retrieves contract instance.
+Just a wrapper for invokeMethod('at', contractAddress), possibly redundant.
 */
 genericAPI.at = function (contractAddress) {
     return new Promise((resolve, reject) => {
@@ -90,7 +91,7 @@ genericAPI.getPrimitiveFields = function(contractAddress, ...fieldsToRetrieve) {
     return new Promise((resolve, reject) => {
         self.Contract.at(contractAddress, function (error, contractInstance) {
             if (error) {
-                reject(new Error('Error at retrieving article at address ' + error));
+                reject(new Error('Error retrieving contract at address ' + error));
                 return;
             }
 
@@ -117,3 +118,46 @@ genericAPI.getPrimitiveFields = function(contractAddress, ...fieldsToRetrieve) {
         })
     })
 }
+
+/*
+Promise: Takes contract address and contract field name as input and returns an
+array containing all field elements.
+*/
+
+/* WORK IN PROGRESS
+genericAPI.getFieldElements = function(contractAddress, fieldName) {
+    let elements = [];
+    let promises = [];
+
+    this.at(contractAddress).then(contractInstance => {
+
+        contractInstance.invokeMethod = genericAPI.invokeMethod;
+        let nullElement = undefined;
+
+        for (let i = 0; !nullElement; i++) {
+            if (nullElement)
+                return;
+            let promise = new Promise((resolve, reject) => {
+                contractInstance[fieldName](i, (error, result) => {
+                    if (error) {
+                        reject('Error retrieving element ' + i + ': ' + error);
+                        return;
+                    }
+
+                    if (result.length !== 42) {
+                        nullElement = true;
+                        console.log('da');
+                    } else {
+                        elements.push(result);
+                        console.log(elements);
+                    }
+                })
+            })
+
+            promises.push(promise);
+        }
+
+        Promise.all(promises)
+    })
+}
+*/
