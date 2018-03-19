@@ -7,13 +7,7 @@ const emptyVersion = function() {
     this.ipfsHash = undefined;
     this.reviews = [];
     this.additionalData = [];
-    this.madeBy = undefined;
-    this.acceptedBy = undefined;
-    this.retractedBy = undefined;
-    this.rejectedBy = undefined;
-    this.punishedBy = undefined;
-    this.creationTimestamp = undefined;
-    this.claimed = undefined;
+    this.entryData = [];
 }
 
 /*
@@ -40,7 +34,7 @@ openArticleAPI.getVersion = function (articleAddress, versionHash) {
             })
     
             let entryDataPromise = openArticleAPI.invokeMethodOn(articleInstance, 'getEntryData', versionHash).then(result => {
-                version.additionalData = result;
+                version.entryData = result;
             })
     
             promises = [reviewsPromise, additionalDataPromise, entryDataPromise];
