@@ -1,132 +1,52 @@
-
-* {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-}
-
 body {
-    padding-top: 10px;
-    padding-right: 20%;
-    padding-left: 20%;
-    color: #000F55;
+    font-family: 'Roboto', sans-serif;
 }
 
-p {
-    font-size: 16px;
+.light {
+  font-weight: 300;
 }
 
-a {
-    font-size: 16px;
+.jumbotron{
+	background: none;
+	max-width:800px;
+
+}
+.navbar{
+	margin-top: 60px;
 }
 
-li {
-    font-size: 16px;
+.navbar-nav {
+	padding-left: 80px;
 }
 
-.small-padding {
-    padding: 0.1em;
-}
-
-footer {
-    padding: 5em;
-}
-
-/* Add a black background color to the top navigation */
-.topnav {
-    overflow: hidden;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: left;
-    color: #000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #DDE3FF;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-    background-color: #000F55;
-    color: #FFF;
+.navbar-nav > li{
+  padding-right:50px;
 }
 
 
-#publicationList {
-    border-collapse: collapse;
-    width: 100%;
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1600px;
+    }
 }
 
-#publicationList td, #publicationList th {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+.gradient_bg {
+	position: absolute;
+ 	height: 300px;
+ 	z-index:-1;
 }
 
-#publicationList th {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: left;
-    background-color: #4CAF50;
-    color: white;
+#gradient_a {
+	top:0;
+	transform-origin: 100% 0;
+	width: 60%;
+	right: 0px;
+	background: linear-gradient(to left,  #f2f2f2, white);
 }
 
-#journalTitle{
-    font-size: 20px;
-}
-
-#authors{
-    font-size: 16px;
-}
-
-#loadMore{
-    padding: 5px;
-    margin-top: 10px;
-    float: left;
-}
-
-#spinner {
-    border: 4px solid #f3f3f3; /* Light grey */
-    border-top: 4px solid #000F55; /* Blue */
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    animation: spin 1s linear infinite;
-    margin: 5px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-thead, table, table-header { display: block; }
-
-#staff-table {
-    max-height: 350px;       
-    overflow-y: auto;  
-    overflow-x: auto; 
-}
-
-#staff-table table-header {   
-    overflow-y: hidden;  
-}
-
-#teclink{
-    font-family: monospace;
-    color: #008800;
-}
-
-#paperlink{
-    font-variant: small-caps;
-    font-size: 20px;
-    color:#008800;
-}
-
-#journalList{
-    padding: 10px;
+#gradient_b { 
+	transform-origin: 100% 0;
+	width: 100%;
+	top:200px;
+	background: linear-gradient(to right,  #e9e9e9, white);
 }
