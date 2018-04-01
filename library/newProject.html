@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>New Project</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="metadataForm">
+        <p>Enter article details:</p>
+        <form id="metadataButtons">
+            <div id="metaForm">
+                <div>
+                    Title:
+                    <br>
+                    <textarea rows="2" cols="50" id="metaTitle"></textarea>
+                </div>
+                <div>
+                    Authors:
+                    <br>
+                    <textarea rows="2" cols="50" id="metaAuthors"></textarea>
+                </div>
+                <div>
+                    Affiliations
+                    <br>
+                    <textarea rows="2" cols="50" id="metaAffiliations"></textarea>
+                </div>
+                <div>
+                    Abstract:
+                    <br>
+                    <textarea rows="10" cols="50" id="metaAbstract"></textarea>
+                </div>
+                <div>
+                    Tags (separate with comma):
+                    <br>
+                    <textarea rows="2" cols="50" id="metaTags"></textarea>
+                </div>
+                <button type="button" onclick="confirmMeta()">Confirm</button>
+            </div>
+            <div hidden id="submitMeta">
+                <button type="button" onclick="submitMeta()">Submit</button>
+                <button type="button" onclick="location.reload()">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <div hidden id="uploadData">
+        <p>Upload and share the main pdf (paper) on the ipfs:</p>
+        <form id="uploadButtons">
+            <input type='file' onchange='openFile(event)'>
+            <br>
+            <br>
+            <button type="button" class='btn' onclick="submitArticle()">Upload</button>
+            <p id="uploadedPerc"></p>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="/js/newProject.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/ipfs-api_18.1.1.js"></script>
+</body>
+
+</html>
