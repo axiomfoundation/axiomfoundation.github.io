@@ -1,346 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Axiom Foundation</title>
 
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/axiom.css" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Axiom Foundation</title>
 
-    <!-- Roboto Font -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:150,300,400,500,700" rel="stylesheet"> 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/axiom.css" rel="stylesheet">
+
+  <!-- Roboto Font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:150,300,400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
+
+<body>
+
+
+  <div class="gradient_bg" id="gradient_a"></div>
+  <div class="gradient_bg" id="gradient_b"></div>
+
+
   <body>
+    <nav id="mainNavbar" style="display: none" class="navbar navbar-expand-lg navbar-light navbar-axiom">
+      <a class="navbar-brand" href="#">
+        <img src="img/axiom_icon_black.png" width="40" height="38" class="d-inline-block align-top" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarsExample09">
+        <ul class="navbar-nav mr-aut navbar-center">
+          <li class="nav-item active">
+            <a class="nav-link" href="#vision">Vision</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#roadmap">Roadmap</a>
+          </li>
 
-    <div class ="gradient_bg" id="gradient_a"></div>
-    <div class ="gradient_bg" id="gradient_b"></div>
+          <li class="nav-item">
+            <a class="nav-link" href="#development">Development</a>
+          </li>
 
-
-   <body>
-
-<nav class="navbar navbar-expand-lg navbar-light navbar-axiom ">
-        <a class="navbar-brand" href="#">
-              <img src="img/axiom_icon_black.png" width="40" height="38" class="d-inline-block align-top" alt="">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExample09">
-          <ul class="navbar-nav mr-aut navbar-center">
-            <li class="nav-item active">
-              <a class="nav-link" href="#vision">Vision</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#roadmap">Roadmap</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="#development">Development</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link " href="#">Prototype</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Prototype</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-     <div class="jumbotron jumbotron-fluid">
-
-        <img src="img/axiom_full_logo_white.png" class="img-fluid" alt="Responsive image">   
-        <div class="description ">
+      <div class="jumbotron jumbotron-fluid">
+        <img id="fadeInImage" style="display: none" src="img/axiom_full_logo_white.png" class="img-fluid" alt="Responsive image">
+        <div id="fadeInText" style="display: none">
           <h1>Decentralized Research Projects on Ethereum</h1>
-          <p>Axiom transforms the current academic peer reviewing and publication system into a decentralized market and open access library for research projects.</h4>
-<div><a href="#" type="button" class="btn btn-outline-light ">Launch Prototype</a></div>
-       </div>
-</div>
+          <p>Axiom transforms the current academic peer reviewing and publication system into a decentralized market and open
+            access library for research projects.</p>
+          <div>
+            <a href="#" role="button" class="btn btn-outline-light">Launch Axiom</a>
+          </div>
+        </div>
+      </div>
 
-     <a name="vision"></a>
-     <div class="container">
-      <p class="text-center section-header light">Vision</p>
+      <div id="vision"></div>
+      <div class="container">
+        <p class="text-center section-header light">Vision</p>
         <div class="row small-space">
           <div class="col-md-1">
-             <img src="img/axiom_icon_black.png" width="40" height="38" class="d-inline-block align-top" alt="">
+            <img src="img/axiom_icon_black.png" width="40" height="38" class="d-inline-block align-top" alt="">
           </div>
           <div class="col-md-11">
-             <h3>Axiom aims to solve pressing issues of the current academic peer reviewing and publishing system</h3>
-      <p class="text-justify">The current academic peer reviewing and publication system faces challenges, such as <strong>wrongly aligned incentive mechanisms</strong>, <strong>unnecessary intermediaries</strong>, and the <strong>existence of various biases.</strong> Axiom  aims to solve these issues by creating an <strong>efficient</strong>, <strong>fair</strong>, and <strong>unbiased</strong> decentralized and market-based ecosystem for research projects to advance the scientific progress.</p>
+            <h3>Axiom aims to solve pressing issues of the current academic peer reviewing and publishing system</h3>
+            <p class="text-justify">The current academic peer reviewing and publication system faces challenges, such as
+              <strong>wrongly aligned incentive mechanisms</strong>,
+              <strong>unnecessary intermediaries</strong>, and the
+              <strong>existence of various biases.</strong> Axiom aims to solve these issues by creating an
+              <strong>efficient</strong>,
+              <strong>fair</strong>, and
+              <strong>unbiased</strong> decentralized and market-based ecosystem for research projects to advance the scientific
+              progress.
+            </p>
 
 
-   <div class="row small-space">
-    <div class="col-md-1">
-     <img src="img/biased.png" class="img-fluid" alt="Axiom Logo">   
-    </div>
-    <div class="col-md-4">
-       Challenge
-       <h3>Wrongly Aligned Incentive Mechanisms</h3>
-            <p class="text-justify">Pseudo-altruism leading researchers to favor the provision of papers over equally important services to the academic community such as writing high-quality reviews and the publication of datasets. </p> 
-    </div>
-    <div class="col-md-1"></div>
-           <div class="col-md-1">
-     <img src="img/marketization.png" class="img-fluid" alt="Axiom Logo">   
-    </div>
-    <div class="col-md-4">
-      Solution
-      <h3>Marketization</h3>
-            <p class="text-justify">By creating a market for research projects, we aim to fix wrongly aligned incentive mechanims. We aim to achieve efficient resource allocation by making the value of services to the scientific community explicit (e.g. the price of a review).</p> 
-    </div>
-   </div>
+            <div class="row small-space">
+              <div class="col-md-1">
+                <img src="img/biased.png" class="img-fluid" alt="Axiom Logo">
+              </div>
+              <div class="col-md-4">
+                Challenge
+                <h3>Wrongly Aligned Incentive Mechanisms</h3>
+                <p class="text-justify">Pseudo-altruism leading researchers to favor the provision of papers over equally important services to the
+                  academic community such as writing high-quality reviews and the publication of datasets. </p>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1">
+                <img src="img/marketization.png" class="img-fluid" alt="Axiom Logo">
+              </div>
+              <div class="col-md-4">
+                Solution
+                <h3>Marketization</h3>
+                <p class="text-justify">By creating a market for research projects, we aim to fix wrongly aligned incentive mechanims. We aim to
+                  achieve efficient resource allocation by making the value of services to the scientific community explicit
+                  (e.g. the price of a review).</p>
+              </div>
+            </div>
 
-   <div class="row small-space">
-    <div class="col-md-1">
-     <img src="img/centralized.png" class="img-fluid" alt="Axiom Logo">   
-    </div>
-    <div class="col-md-4">
-       Challenge
-       <h3>Unnecessary Intermediaries</h3>
-          <p class="text-justify">Intermediaries such as publishers add little value but take the profit, e.g. by charging for publishing of and access to research assets. However, the creation of research assets is almost solely done by researchers. <a href="#myModal1"data-toggle="modal">Learn More.</a></p>
-    </div>
-    <div class="col-md-1"></div>
-           <div class="col-md-1">
-     <img src="img/decentralized.png" class="img-fluid" alt="Axiom Logo">   
-    </div>
-    <div class="col-md-4">
-      Solution
-      <h3>Disintermediation</h3>
-             <p class="text-justify">By cutting out unnecessary intermediaries such as publishers, Axiom helps to unlock resources and to compensate researchers fairly. </p>
-    </div>
-   </div>
-
-
-   <div class="row small-space">
-    <div class="col-md-1">
-     <img src="img/eye.png" class="img-fluid" alt="Axiom Logo">   
-    </div>
-    <div class="col-md-4">
-       Challenge
-       <h3>Existence of Various Biases</h3>
-          <p class="text-justify">Biases such as gender, nationality and institutional affiliation affect the scientific progress. They are facilitated by a lack of transparency of the reviewing and publication process that is exploited by closed circles.</p>
-    </div>
-    <div class="col-md-1"></div>
-           <div class="col-md-1">
-     <img src="img/transparency.png" class="img-fluid" alt="Axiom Logo">   
-    </div>
-    <div class="col-md-4">
-      Solution
-      <h3>Full Transparency</h3>
-         <p class="text-justify">Axiom helps to increase the transparency of the peer reviewing and publishing process. By doing so, it helps to mitigate current biases in the system. </p>
-    </div>
-   </div>
+            <div class="row small-space">
+              <div class="col-md-1">
+                <img src="img/centralized.png" class="img-fluid" alt="Axiom Logo">
+              </div>
+              <div class="col-md-4">
+                Challenge
+                <h3>Unnecessary Intermediaries</h3>
+                <p class="text-justify">Intermediaries such as publishers add little value but take the profit, e.g. by charging for publishing of
+                  and access to research assets. However, the creation of research assets is almost solely done by researchers.
+                  <a href="#myModal1" data-toggle="modal">Learn More.</a>
+                </p>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1">
+                <img src="img/decentralized.png" class="img-fluid" alt="Axiom Logo">
+              </div>
+              <div class="col-md-4">
+                Solution
+                <h3>Disintermediation</h3>
+                <p class="text-justify">By cutting out unnecessary intermediaries such as publishers, Axiom helps to unlock resources and to compensate
+                  researchers fairly. </p>
+              </div>
+            </div>
 
 
-  
+            <div class="row small-space">
+              <div class="col-md-1">
+                <img src="img/eye.png" class="img-fluid" alt="Axiom Logo">
+              </div>
+              <div class="col-md-4">
+                Challenge
+                <h3>Existence of Various Biases</h3>
+                <p class="text-justify">Biases such as gender, nationality and institutional affiliation affect the scientific progress. They are
+                  facilitated by a lack of transparency of the reviewing and publication process that is exploited by closed
+                  circles.
+                </p>
+              </div>
+              <div class="col-md-1"></div>
+              <div class="col-md-1">
+                <img src="img/transparency.png" class="img-fluid" alt="Axiom Logo">
+              </div>
+              <div class="col-md-4">
+                Solution
+                <h3>Full Transparency</h3>
+                <p class="text-justify">Axiom helps to increase the transparency of the peer reviewing and publishing process. By doing so, it helps
+                  to mitigate current biases in the system. </p>
+              </div>
+            </div>
 
-      </div> <!-- /container -->
- </div>
-</div>
 
 
-     
 
-<div class="modal" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-full" role="document">
-        <div class="modal-content">
+          </div>
+          <!-- /container -->
+        </div>
+      </div>
+
+
+
+
+      <div class="modal" id="myModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-full" role="document">
+          <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">In 2015, the global academic publishing revenue totalled USD 30 billion</a> with a profit margin of around 30%.</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
+              <h5 class="modal-title">In 2015, the global academic publishing revenue totalled USD 30 billion</a> with a profit margin of around
+                30%.
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
             </div>
             <div class="modal-body p-4" id="result">
-                <iframe src="http://www.stm-assoc.org/2015_02_20_STM_Report_2015.pdf" class="fullScreen"></iframe>
+              <iframe src="http://www.stm-assoc.org/2015_02_20_STM_Report_2015.pdf" class="fullScreen"></iframe>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 
-<a name="roadmap"></a>
-<section class="bg-black text-center">
-   <div class="container">
-      <div class="section-header-inv light"> <img src="img/axiom_icon_white.png" class="img-fluid" alt="Responsive image">  Roadmap</div>
+      <div id="roadmap"></div>
+      <section class="bg-black text-center">
+        <div class="container">
+          <div class="section-header-inv light">
+            <img src="img/axiom_icon_white.png" class="img-fluid" alt="Responsive image"> Roadmap</div>
 
 
-      <div class="timeline">
-  <div class="entry">
-    <div class="title">
-      <p>Fall 2018<br><small>Pre-ICO</small></p>
-    </div>
-    <div class="body">
-      <p>Axiom Inception</p>
-      <p class="text-muted">Technical Milestones</p>
-      <ul>
-        <li>Basic storage and browsing of research projects</li>
-        <li>Decentralized peer review process management</li>
-        <li>Axiom running on Ropsten test network</li>
-      </ul>
-       <p class="text-muted">Tokeneconomics</p>
-      <ul>
-        <li>Game theoretical formalization of key incentive mechanisms of Axiom</li>
-        <li>In-depth and open reviewed token management and distribution</li>
-      </ul>
+          <div class="timeline">
+            <div class="entry">
+              <div class="title">
+                <p>Fall 2018
+                  <br>
+                  <small>Pre-ICO</small>
+                </p>
+              </div>
+              <div class="body">
+                <p>Axiom Inception</p>
+                <p class="text-muted">Technical Milestones</p>
+                <ul>
+                  <li>Basic storage and browsing of research projects</li>
+                  <li>Decentralized peer review process management</li>
+                  <li>Axiom running on Ropsten test network</li>
+                </ul>
+                <p class="text-muted">Tokeneconomics</p>
+                <ul>
+                  <li>Game theoretical formalization of key incentive mechanisms of Axiom</li>
+                  <li>In-depth and open reviewed token management and distribution</li>
+                </ul>
 
-    </div>
-  </div>
-  <div class="entry">
-    <div class="title">
-      <p>Late 2018<br><small>ICO</small></p>
-    </div>
-    <div class="body">
-      <p>Axiom Interstellar</p>
-       <p class="text-muted">Technical Milestones</p>
-      <ul>
-         <li>Axiom running on main Ethereum network</li>
-      </ul>
+              </div>
+            </div>
+            <div class="entry">
+              <div class="title">
+                <p>Late 2018
+                  <br>
+                  <small>ICO</small>
+                </p>
+              </div>
+              <div class="body">
+                <p>Axiom Interstellar</p>
+                <p class="text-muted">Technical Milestones</p>
+                <ul>
+                  <li>Axiom running on main Ethereum network</li>
+                </ul>
 
-       <p class="text-muted">Tokeneconomics</p>
-      <ul>
-        <li>Vetted token management and distribution mechanisms</li>
-      </ul>
-    </div>
-  </div>
-  <div class="entry">
-    <div class="title">
-      <p>Mid 2019<br><small>Post-ICO</small></p>
-    </div>
-    <div class="body">
-      <p>Axiom Transwarp</p>
-      <p class="text-muted">Technical Milestones</p>
-      <ul>
-        <li>Time delayed enforcable contribution of research assets</li>
-      </ul>
-    </div>
-  </div>
+                <p class="text-muted">Tokeneconomics</p>
+                <ul>
+                  <li>Vetted token management and distribution mechanisms</li>
+                </ul>
+              </div>
+            </div>
+            <div class="entry">
+              <div class="title">
+                <p>Mid 2019
+                  <br>
+                  <small>Post-ICO</small>
+                </p>
+              </div>
+              <div class="body">
+                <p>Axiom Transwarp</p>
+                <p class="text-muted">Technical Milestones</p>
+                <ul>
+                  <li>Time delayed enforcable contribution of research assets</li>
+                </ul>
+              </div>
+            </div>
 
-</div>
+          </div>
 
-   </div>
-   <!-- /.container-->
-</section>
+        </div>
+        <!-- /.container-->
+      </section>
 
- <a name="development"></a>
-     <div class="container">
+      <div id="development"></div>
+      <div class="container">
         <!-- Example row of columns -->
-  <p class="text-center section-header light">Development</p>
+        <p class="text-center section-header light">Development</p>
         <div class="row small-space">
           <div class="col-md-1">
-             <img src="img/axiom_icon_black.png" width="40" height="38" class="d-inline-block align-top" alt="">
+            <img src="img/axiom_icon_black.png" width="40" height="38" class="d-inline-block align-top" alt="">
           </div>
           <div class="col-md-11">
 
-             <h1>Axiom Technology Stack</h1>
-            Our current technology stack consists of <strong>IPFS</strong>, <strong>Ethereum</strong>, <strong>Solidity Smart Contracts</strong>, <strong>Metamask</strong>, <strong>React</strong> and <strong>Bootstrap</strong>.
+            <h1>Axiom Technology Stack</h1>
+            Our current technology stack consists of
+            <strong>IPFS</strong>,
+            <strong>Ethereum</strong>,
+            <strong>Solidity Smart Contracts</strong>,
+            <strong>Metamask</strong>,
+            <strong>React</strong> and
+            <strong>Bootstrap</strong>.
 
 
-              <div class="row small-space">
-                <div class="col-md-4"><img src="img/building_blocks_icon.png" class="img-fluid" alt="Responsive image"></div>
-                <div class="col-md-8">
-           <h3>Axiom Frontend</h3>
-           <ul>
-            <li>React for reference implementation of Axiom library</li>
-            <li>Twitter Bootstrap for landing page </li>
-          </ul>
-           <h3>Axiom Backend</h3>
-           <ul>
-            <li>IPFS for decentralized storing of immutable time stamped research assets</li>
-            <li>Solidity ERC 20 tokens as a means of value exchange of research assets and for marketization</li>
-            <li>Solidity smart contracts for review process management</li>
-            <li>Metamask for interacting with the Ethereum blockchain through a browser </li>
-           </ul>
- 
-</div>
+            <div class="row small-space">
+              <div class="col-md-4">
+                <img src="img/building_blocks_icon.png" class="img-fluid" alt="Responsive image">
+              </div>
+              <div class="col-md-8">
+                <h3>Axiom Frontend</h3>
+                <ul>
+                  <li>React for reference implementation of Axiom library</li>
+                  <li>Twitter Bootstrap for landing page </li>
+                </ul>
+                <h3>Axiom Backend</h3>
+                <ul>
+                  <li>IPFS for decentralized storing of immutable time stamped research assets</li>
+                  <li>Solidity ERC 20 tokens as a means of value exchange of research assets and for marketization</li>
+                  <li>Solidity smart contracts for review process management</li>
+                  <li>Metamask for interacting with the Ethereum blockchain through a browser </li>
+                </ul>
 
               </div>
 
+            </div>
 
-             <h1 class="small-space">Contribute to Axiom</h1>
 
-             <p>Please read our <strong>Whitepaper</strong>, join our discussion  on <strong>Slack</strong>, and contribute code to <strong>GitHub</strong>.</p>
-                <div class="row small-space">
+            <h1 class="small-space">Contribute to Axiom</h1>
 
-          <div class="col-md-4">
-            <h3>Formalize Axiom</h3>
-            <p>Read our whitepaper for further information</p>
-            <a href="https://docs.google.com/document/d/1WuFnGMTWJZvD18XEBaDza7-oJnQm6HTUAM6vMqTbmMc/edit?usp=sharing" type="button" class="btn btn-outline-dark"><img src="img/axiom_icon_small.png" class="img-fluid" alt="Slack Logo"> Read Whitepaper</a>
+            <p>Please read our
+              <strong>Whitepaper</strong>, join our discussion on
+              <strong>Slack</strong>, and contribute code to
+              <strong>GitHub</strong>.</p>
+            <div class="row row-eq-height">
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-header">Formalize Axiom</div>
+                  <div class="card-body">
+                    <p>Read our whitepaper for further information</p>
+                    <a href="https://docs.google.com/document/d/1WuFnGMTWJZvD18XEBaDza7-oJnQm6HTUAM6vMqTbmMc/edit?usp=sharing" role="button"
+                      class="btn btn-outline-dark">
+                      <img src="img/axiom_icon_small.png" class="img-fluid" alt="Slack Logo"> Read Whitepaper</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-header">Discuss Axiom</div>
+                  <div class="card-body">
+                    <p>Join the discussion in our official Slack group</p>
+                    <a href="https://join.slack.com/t/dislib/shared_invite/enQtMzc4NjEwMjY2NTMxLWM5MmQzZjdhZjhhYzQ0NmJlYTM2NTc3OTc2ZTk5ZjU3NTZlZjEwNDA3Mzc3MzYwMzE1NWQ5YmU0ZGE2ZDZmOTU"
+                      role="button" class="btn btn-outline-dark">
+                      <img src="img/slack_logo.png" class="img-fluid" alt="Slack Logo"> Join Slack</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card">
+                  <div class="card-header">Develop Axiom</div>
+                  <div class="card-body">
+                    <p>All Axiom related code is available on GitHub</p>
+                    <a href="https://github.com/axiomfoundation" role="button" class="btn btn-outline-dark">
+                      <img src="img/github_logo.png" class="img-fluid" alt="GitHub Logo"> Explore GitHub</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-4">
-             <h3>Discuss Axiom</h3>
-            <p>Join the discussion in our official Slack group</p>
-             <a href="https://join.slack.com/t/dislib/shared_invite/enQtMzc4NjEwMjY2NTMxLWM5MmQzZjdhZjhhYzQ0NmJlYTM2NTc3OTc2ZTk5ZjU3NTZlZjEwNDA3Mzc3MzYwMzE1NWQ5YmU0ZGE2ZDZmOTU" type="button" class="btn btn-outline-dark"><img src="img/slack_logo.png" class="img-fluid" alt="Slack Logo"> Join Slack</a>
-           
-          </div>
-          <div class="col-md-4">
-              <h3>Develop Axiom</h3>
-            <p>All Axiom related code is available on GitHub</p>
-                <a href="https://github.com/axiomfoundation" type="button" class="btn btn-outline-dark"><img src="img/github_logo.png" class="img-fluid" alt="GitHub Logo">  Explore GitHub</a>
-            
-           
-          </div>
-        </div>
-      </div> <!-- /container -->
+          <!-- /container -->
+
+          <div id="back-to-top"></div>
 
     </main>
 
-<footer class="bg-black text-center">
-   <div class="container">
+    <footer class="bg-black text-center">
+      <div class="container">
 
-      <div class="row">
-        <div class="col-12 col-md">
-      <img src="img/axiom_full_logo_white.png" class="img-fluid" alt="Axiom Logo">   
+        <div class="row">
+          <div class="col-12 col-md">
+            <img src="img/axiom_full_logo_white.png" class="img-fluid" alt="Axiom Logo">
 
 
-        </div>
+          </div>
 
-        <div class="col-6 col-md">
-          <h5>About</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Core Developers</a></li>
-            <li><a class="text-muted" href="#">Data and Privacy Statement</a></li>
-          </ul>
+          <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="text-muted" href="#">Core Developers</a>
+              </li>
+              <li>
+                <a class="text-muted" href="#">Data and Privacy Statement</a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-</footer>
+    </footer>
 
 
-     
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript">  
-    $( document ).ready(function() {   
-       $('#gradient_a').css({transform: 'skewY(-40deg)' });
-       $('#gradient_b').css({transform: 'skewY(-30deg)' });
-     });
+      $(document).ready(function () {
+        $('#gradient_a').css({ transform: 'skewY(-40deg)' });
+        $('#gradient_b').css({ transform: 'skewY(-30deg)' });
+        $('#fadeInImage').delay(500).fadeIn(1000);
+        $('#fadeInText').delay(2000).fadeIn(500);
+        $('#mainNavbar').delay(2000).slideDown(500);
+        var rot1 = -40 + $(window).scrollTop() * 0.002;
+        var rot2 = -30 + $(window).scrollTop() * 0.004;
 
-      $(window).scroll(function() {
-          var rot1 =  -40+$(window).scrollTop()*0.002 ;
-          var rot2 =  -30+$(window).scrollTop()*0.004 ;
+        $('#gradient_a').css({ transform: 'skewY(' + rot1 + 'deg)' });
+        $('#gradient_b').css({ transform: 'skewY(' + rot2 + 'deg)' });
 
-          $('#gradient_a').css({transform: 'skewY(' + rot1 + 'deg)' });
-          $('#gradient_b').css({ transform: 'skewY(' + rot2 + 'deg)' });
+        $("a").on('click', function (event) {
+          if (this.hash !== "") {
+            event.preventDefault();
+
+            var hash = this.hash;
+            $('html, body').animate({
+              scrollTop: $(hash).offset().top
+            }, 800, function () {
+              window.location.hash = hash;
+            });
+          } // End if
         });
+      });
 
-  </script>
+      $('#back-to-top').on('click', function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 600);
+      });
+
+      ///////////////////////////
+      // On Scroll
+      $(window).on('scroll', function () {
+        var wScroll = $(this).scrollTop();
+        // Back To Top Appear
+        wScroll > 700 ? $('#back-to-top').fadeIn() : $('#back-to-top').fadeOut();
+      });
+
+    </script>
 
   </body>
+
 </html>
