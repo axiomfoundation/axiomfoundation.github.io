@@ -113,9 +113,9 @@ h3 {
 }
 
 .navbar-axiom {
+  position: absolute;
+  width: 100%;
   background-color: white;
-
-  margin: 5px;
 }
 
 
